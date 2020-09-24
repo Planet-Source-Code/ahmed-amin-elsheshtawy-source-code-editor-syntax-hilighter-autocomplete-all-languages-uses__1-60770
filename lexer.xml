@@ -1,0 +1,1420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Juan M. Rodr&iacute;guez, 2002. Lexer para ScintillaVB -->
+<!DOCTYPE styling [
+
+<!ELEMENT styling (defstyles+, languages+)>
+<!ELEMENT defstyles (defstyle+)>
+<!ELEMENT defstyle (font, forecolor, backcolor, eolfilled, visible, case, charset)>
+<!ELEMENT languages (language+)>
+<!ELEMENT language (keywordlists, styles)>
+<!ELEMENT keywordlists (keywords+)>
+<!ELEMENT styles (style+)>
+<!ELEMENT keywords (#PCDATA)>
+<!ELEMENT style (font, forecolor, backcolor, eolfilled, visible, case, charset)>
+<!ELEMENT font EMPTY>
+<!ELEMENT forecolor EMPTY>
+<!ELEMENT backcolor EMPTY>
+<!ELEMENT eolfilled EMPTY>
+<!ELEMENT visible EMPTY>
+<!ELEMENT case EMPTY>
+<!ELEMENT charset EMPTY>
+
+<!ATTLIST defstyles vbres CDATA "141">
+<!ATTLIST defstyle name CDATA #REQUIRED>
+<!ATTLIST defstyle code CDATA #REQUIRED>
+<!ATTLIST defstyle vbres CDATA #IMPLIED>
+<!ATTLIST languages vbres CDATA "109">
+<!ATTLIST language name CDATA #REQUIRED>
+<!ATTLIST language code CDATA #REQUIRED>
+<!ATTLIST language vbres CDATA "101">
+<!ATTLIST language stylebits CDATA #IMPLIED>
+<!ATTLIST keywordlists vbres CDATA "110">
+<!ATTLIST styles vbres CDATA "111">
+<!ATTLIST keywords code CDATA #REQUIRED>
+<!ATTLIST keywords vbres CDATA "105">
+<!ATTLIST keywords description CDATA #IMPLIED>
+<!ATTLIST style name CDATA #REQUIRED>
+<!ATTLIST style code CDATA #REQUIRED>
+<!ATTLIST style vbres CDATA #IMPLIED>
+<!ATTLIST font name CDATA #REQUIRED>
+<!ATTLIST font size CDATA #REQUIRED>
+<!ATTLIST font bold (true|false) "false">
+<!ATTLIST font italic (true|false) "false">
+<!ATTLIST font underline (true|false) "false">
+<!ATTLIST forecolor value CDATA #REQUIRED>
+<!ATTLIST backcolor value CDATA #REQUIRED>
+<!ATTLIST eolfilled value (true|false) "false">
+<!ATTLIST visible value (true|false) "true">
+<!ATTLIST case value CDATA #IMPLIED>
+<!ATTLIST charset value CDATA #IMPLIED>
+]>
+<styling>
+	<defstyles vbres="141">
+		<defstyle name="Default" code="32" vbres="135">
+			<font name="Courier New" size="9" bold="false" italic="false" underline="false"/>
+			<forecolor value="0"/>
+			<backcolor value="16777215"/>
+			<eolfilled value="false"/>
+			<visible value="true"/>
+			<case value="0"/>
+			<charset value="0"/>
+		</defstyle>
+		<defstyle name="LineNumber" code="33" vbres="136">
+			<font name="Arial" size="8" bold="false" italic="false" underline="false"/>
+			<forecolor value="10485760"/>
+			<backcolor value="14671839"/>
+			<eolfilled value="false"/>
+			<visible value="true"/>
+			<case value="0"/>
+			<charset value="0"/>
+		</defstyle>
+		<defstyle name="BraceLight" code="34" vbres="137">
+			<font name="Arial" size="8.5" bold="true" italic="false" underline="false"/>
+			<forecolor value="10485760"/>
+			<backcolor value="65535"/>
+			<eolfilled value="false"/>
+			<visible value="true"/>
+			<case value="0"/>
+			<charset value="0"/>
+		</defstyle>
+		<defstyle name="BraceBad" code="35" vbres="138">
+			<font name="Arial" size="8.5" bold="true" italic="false" underline="false"/>
+			<forecolor value="255"/>
+			<backcolor value="16777215"/>
+			<eolfilled value="false"/>
+			<visible value="true"/>
+			<case value="0"/>
+			<charset value="0"/>
+		</defstyle>
+		<defstyle name="ControlChar" code="36" vbres="139">
+			<font name="Arial" size="8.5" bold="true" italic="false" underline="false"/>
+			<forecolor value="16099209"/>
+			<backcolor value="16777215"/>
+			<eolfilled value="false"/>
+			<visible value="true"/>
+			<case value="0"/>
+			<charset value="0"/>
+		</defstyle>
+		<defstyle name="IndentGuide" code="37" vbres="140">
+			<font name="Arial" size="8.5" bold="true" italic="false" underline="false"/>
+			<forecolor value="0"/>
+			<backcolor value="16777215"/>
+			<eolfilled value="false"/>
+			<visible value="true"/>
+			<case value="0"/>
+			<charset value="0"/>
+		</defstyle>
+	</defstyles>
+	<languages vbres="109">
+		<language name="Python" code="2" vbres="101">
+			<keywordlists vbres="110">
+				<keywords code="0" vbres="105">gyy fff yyyy tolomongo</keywords>
+			</keywordlists>
+			<styles vbres="111">
+				<style name="Default" code="0" vbres="112">
+					<font name="Century Gothic" size="10" bold="false" italic="false" underline="false"/>
+					<forecolor value="8404992"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Commentline" code="1" vbres="113">
+					<font name="Arial" size="8.5" bold="true" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Number" code="2" vbres="114">
+					<font name="Arial" size="8.5" bold="true" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="String" code="3" vbres="115">
+					<font name="Arial" size="8.5" bold="true" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Character" code="4" vbres="116">
+					<font name="Arial" size="8.5" bold="true" italic="false" underline="false"/>
+					<forecolor value="16099209"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Word" code="5" vbres="117">
+					<font name="Arial" size="8.5" bold="true" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Triple" code="6" vbres="118">
+					<font name="Arial" size="8.5" bold="true" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="TripleDouble" code="7" vbres="119">
+					<font name="Arial" size="8.5" bold="true" italic="false" underline="false"/>
+					<forecolor value="8421376"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Classname" code="8" vbres="120">
+					<font name="Arial" size="8.5" bold="true" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Defname" code="9" vbres="121">
+					<font name="Arial" size="8.5" bold="true" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Operator" code="10" vbres="122">
+					<font name="Arial" size="8.5" bold="true" italic="false" underline="false"/>
+					<forecolor value="16744576"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Identifier" code="11" vbres="123">
+					<font name="Arial" size="8.5" bold="true" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Commentblock" code="12" vbres="124">
+					<font name="Arial" size="8.5" bold="true" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Stringeol" code="13" vbres="125">
+					<font name="Arial" size="8.5" bold="true" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+			</styles>
+		</language>
+		<language name="CPP" code="3" vbres="101">
+			<keywordlists vbres="110">
+				<keywords code="0" vbres="105">gyy fff yyyy tolomongo</keywords>
+			</keywordlists>
+			<styles vbres="111">
+				<style name="Default" code="0" vbres="112">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Comment" code="1" vbres="126">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Commentline" code="2" vbres="113">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Commentdoc" code="3">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Number" code="4" vbres="114">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Word" code="5" vbres="117">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="String" code="6" vbres="115">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Character" code="7" vbres="116">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Uuid" code="8" vbres="133">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Preprocessor" code="9" vbres="134">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Operator" code="10" vbres="122">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Identifier" code="11" vbres="123">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Stringeol" code="12" vbres="125">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Verbatim" code="13" vbres="127">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Regex" code="14" vbres="128">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Commentlinedoc" code="15" vbres="129">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Word2 " code="16" vbres="130">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="8421376"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Commentdockeyword" code="17" vbres="131">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Commentdockeyworderror" code="18" vbres="132">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+			</styles>
+		</language>
+		<language name="HTML" code="4" vbres="101" stylebits="7">
+			<keywordlists vbres="110">
+				<keywords code="0" vbres="105">a abbr acronym address applet area b base basefont bdo big blockquote body br button caption center cite code col colgroup dd del dfn dir div dl dt em fieldset font form frame frameset h1 h2 h3 h4 h5 h6 head hr html i iframe img input ins isindex kbd label legend li link map menu meta noframes noscript object ol optgroup option p param pre q s samp script select small span strike strong style sub sup table tbody td textarea tfoot th thead title tr tt u ul var xmlns abbr accept-charset accept accesskey action align alink alt archive axis background bgcolor border cellpadding cellspacing char charoff charset checked cite class classid clear codebase codetype color cols colspan compact content coords data datafld dataformatas datapagesize datasrc datetime declare defer dir disabled enctype face for frame frameborder headers height href hreflang hspace http-equiv id ismap label lang language link longdesc marginwidth marginheight maxlength media method multiple name nohref noresize noshade nowrap object onblur onchange onclick ondblclick onfocus onkeydown onkeypress onkeyup onload onmousedown onmousemove onmouseover onmouseout onmouseup onreset onselect onsubmit onunload profile prompt readonly rel rev rows rowspan rules scheme scope shape size span src standby start style summary tabindex target text title type usemap valign value valuetype version vlink vspace width text password checkbox radio submit reset file hidden image public !doctype xml</keywords>
+				<keywords code="1" vbres="105" description="JavaScript">break case catch continue default do else for function if return throw try var while</keywords>
+				<keywords code="2" vbres="105" description="VBScript">and as byref byval case call const continue dim do each else elseif end error exit false for function global goto if in loop me new next not nothing on optional or private public redim rem resume select set sub then to true type while with boolean byte currency date double integer long object single string type variant</keywords>
+			</keywordlists>
+			<styles vbres="111">
+				<style name="Default" code="0" vbres="112">
+					<font name="Times New Roman" size="8" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Tag" code="1">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="16711680"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Tagunknown" code="2">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Attribute" code="3">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Attributeunknown" code="4">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Number" code="5" vbres="114">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Doublestring" code="6">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Singlestring" code="7">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Other" code="8">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Comment" code="9" vbres="126">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Entity" code="10">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Tagend" code="11">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Xmlstart" code="12">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Xmlend" code="13">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Script" code="14">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16744576"/>
+					<eolfilled value="true"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Asp" code="15">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Aspat" code="16">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Cdata" code="17">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Question" code="18">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Value" code="19">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Xccomment" code="20">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Sgml_default" code="21">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Sgml_command" code="22">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Sgml_1st_param" code="23">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Sgml_doublestring" code="24">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Sgml_simplestring" code="25">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Sgml_error" code="26">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Sgml_special" code="27">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Sgml_entity" code="28">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Sgml_comment" code="29">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Sgml_1st_param_comment" code="30">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="Sgml_block_default" code="31">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="JSstart" code="40">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="65535"/>
+					<eolfilled value="true"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="JSdefault" code="41">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="255"/>
+					<backcolor value="65535"/>
+					<eolfilled value="true"/>
+					<visible value="true"/>
+					<case value="1"/>
+					<charset value="0"/>
+				</style>
+				<style name="JScomment" code="42">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="JScommentline" code="43">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="true"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="JScommentdoc" code="44">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="JSnumber" code="45">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="65535"/>
+					<eolfilled value="true"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="JSword" code="46">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="true"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="JSkeyword" code="47">
+					<font name="Arial" size="8" bold="false" italic="true" underline="false"/>
+					<forecolor value="12615680"/>
+					<backcolor value="65535"/>
+					<eolfilled value="true"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="JSdoublestring" code="48">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="true"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="JSsinglestring" code="49">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="65535"/>
+					<eolfilled value="true"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="JSsymbols" code="50">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="65535"/>
+					<eolfilled value="true"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="JSstringeol" code="51">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="8454143"/>
+					<eolfilled value="true"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="JSregex" code="52">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPJSstart" code="55">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPJSdefault" code="56">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPJScomment" code="57">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPJScommentline" code="58">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPJScommentdoc" code="59">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPJSnumber" code="60">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPJSword" code="61">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPJSkeyword" code="62">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="12615680"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPJSdoublestring" code="63">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPJSsinglestring" code="64">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPJSsymbols" code="65">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPJSstringeol" code="66">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPJSregex" code="67">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="VBSstart" code="70">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="VBSdefault" code="71">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="VBScommentline" code="72">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="VBSnumber" code="73">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="VBSword" code="74">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="VBSstring" code="75">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="VBSidentifier" code="76">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="VBSstringeol" code="77">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPVBSstart" code="80">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPVBSdefault" code="81">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPVBScommentline" code="82">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPVBSnumber" code="83">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPVBSword" code="84">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPVBSstring" code="85">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPVBSidentifier" code="86">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPVBSstringeol" code="87">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PYstart" code="90">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PYdefault" code="91">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PYcommentline" code="92">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PYnumber" code="93">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PYstring" code="94">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PYcharacter" code="95">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PYword" code="96">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PYtriple" code="97">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PYtripledouble" code="98">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PYclassname" code="99">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PYdefname" code="100">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PYoperator" code="101">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PYidentifier" code="102">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPPYstart" code="105">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPPYdefault" code="106">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPPYcommentline" code="107">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPPYnumber" code="108">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPPYstring" code="109">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPPYcharacter" code="110">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPPYword" code="111">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPPYtriple" code="112">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPPYtripledouble" code="113">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPPYclassname" code="114">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPPYdefname" code="115">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPPYoperator" code="116">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="ASPPYidentifier" code="117">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PHPdefault" code="118">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PHPhstring" code="119">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PHPsimplestring" code="120">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PHPword" code="121">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PHPnumber" code="122">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PHPvariable" code="123">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PHPcomment" code="124">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PHPcommentline" code="125">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PHPhstring_variable" code="126">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+				<style name="PHPoperator" code="127">
+					<font name="Arial" size="8.5" bold="false" italic="false" underline="false"/>
+					<forecolor value="0"/>
+					<backcolor value="16777215"/>
+					<eolfilled value="false"/>
+					<visible value="true"/>
+					<case value="0"/>
+					<charset value="0"/>
+				</style>
+			</styles>
+		</language>
+	</languages>
+</styling>

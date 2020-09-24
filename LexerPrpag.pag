@@ -1,0 +1,586 @@
+VERSION 5.00
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Begin VB.PropertyPage LexerPrpag 
+   Caption         =   "Lenguajes"
+   ClientHeight    =   3570
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   6330
+   PaletteMode     =   0  'Halftone
+   ScaleHeight     =   3570
+   ScaleWidth      =   6330
+   Tag             =   "109"
+   Begin MSComctlLib.TreeView tvLexer 
+      Height          =   3375
+      Left            =   90
+      TabIndex        =   19
+      Top             =   90
+      Width           =   2835
+      _ExtentX        =   5001
+      _ExtentY        =   5953
+      _Version        =   393217
+      Indentation     =   176
+      LabelEdit       =   1
+      LineStyle       =   1
+      Style           =   7
+      FullRowSelect   =   -1  'True
+      HotTracking     =   -1  'True
+      BorderStyle     =   1
+      Appearance      =   0
+      MousePointer    =   1
+   End
+   Begin VB.Frame frStyle 
+      Caption         =   "Estilo"
+      Height          =   3480
+      Left            =   2865
+      TabIndex        =   0
+      Tag             =   "102"
+      Top             =   75
+      Visible         =   0   'False
+      Width           =   3165
+      Begin VB.ComboBox Combo1 
+         Appearance      =   0  'Flat
+         Height          =   315
+         Left            =   105
+         Style           =   2  'Dropdown List
+         TabIndex        =   17
+         Top             =   3090
+         Width           =   2955
+      End
+      Begin VB.OptionButton optUL 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000004&
+         Caption         =   "May. y min."
+         ForeColor       =   &H80000008&
+         Height          =   195
+         Left            =   105
+         TabIndex        =   16
+         Tag             =   "142"
+         Top             =   1425
+         Width           =   2955
+      End
+      Begin VB.OptionButton optL 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000004&
+         Caption         =   "Minúsculas"
+         ForeColor       =   &H80000008&
+         Height          =   195
+         Left            =   105
+         TabIndex        =   15
+         Tag             =   "144"
+         Top             =   1935
+         Width           =   1215
+      End
+      Begin VB.OptionButton optU 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000004&
+         Caption         =   "Mayúsculas"
+         ForeColor       =   &H80000008&
+         Height          =   195
+         Left            =   105
+         TabIndex        =   14
+         Tag             =   "143"
+         Top             =   1680
+         Width           =   1215
+      End
+      Begin VB.CheckBox chkEolFil 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000004&
+         Caption         =   "Colorea hasta fin de línea"
+         ForeColor       =   &H80000008&
+         Height          =   240
+         Left            =   105
+         TabIndex        =   13
+         Tag             =   "146"
+         Top             =   2535
+         Width           =   2955
+      End
+      Begin VB.CheckBox chkVisible 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000004&
+         Caption         =   "Visible"
+         ForeColor       =   &H80000008&
+         Height          =   300
+         Left            =   105
+         TabIndex        =   12
+         Tag             =   "145"
+         Top             =   2220
+         Width           =   1215
+      End
+      Begin VB.PictureBox Picture1 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         ForeColor       =   &H80000008&
+         Height          =   300
+         Left            =   1200
+         ScaleHeight     =   270
+         ScaleWidth      =   270
+         TabIndex        =   5
+         Top             =   1005
+         Width           =   300
+      End
+      Begin VB.PictureBox Picture2 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         ForeColor       =   &H80000008&
+         Height          =   300
+         Left            =   2745
+         ScaleHeight     =   270
+         ScaleWidth      =   270
+         TabIndex        =   4
+         Top             =   1005
+         Width           =   300
+      End
+      Begin VB.CommandButton cmdChangeFont 
+         Caption         =   "···"
+         Height          =   300
+         Left            =   2745
+         TabIndex        =   3
+         Top             =   570
+         Width           =   300
+      End
+      Begin VB.PictureBox Picture3 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         ForeColor       =   &H80000008&
+         Height          =   345
+         Left            =   105
+         ScaleHeight     =   315
+         ScaleWidth      =   2520
+         TabIndex        =   1
+         Top             =   540
+         Width           =   2550
+         Begin VB.Label lblExample 
+            Alignment       =   2  'Center
+            AutoSize        =   -1  'True
+            BackColor       =   &H00FFFFFF&
+            Caption         =   "Texto de ejemplo"
+            Height          =   195
+            Left            =   660
+            TabIndex        =   2
+            Top             =   60
+            Width           =   1245
+         End
+      End
+      Begin VB.Label Label5 
+         AutoSize        =   -1  'True
+         Caption         =   "Conjunto de caracteres:"
+         Height          =   195
+         Left            =   105
+         TabIndex        =   18
+         Tag             =   "147"
+         Top             =   2865
+         Width           =   2925
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Tipo de letra:"
+         Height          =   195
+         Left            =   120
+         TabIndex        =   8
+         Tag             =   "106"
+         Top             =   285
+         Width           =   960
+      End
+      Begin VB.Label Label2 
+         AutoSize        =   -1  'True
+         Caption         =   "Primer plano:"
+         Height          =   195
+         Left            =   120
+         TabIndex        =   7
+         Tag             =   "103"
+         Top             =   1065
+         Width           =   945
+      End
+      Begin VB.Label Label3 
+         AutoSize        =   -1  'True
+         Caption         =   "Fondo:"
+         Height          =   195
+         Left            =   2100
+         TabIndex        =   6
+         Tag             =   "104"
+         Top             =   1065
+         Width           =   510
+      End
+   End
+   Begin VB.Frame frLanguage 
+      Caption         =   "Lenguaje"
+      Height          =   1710
+      Left            =   3060
+      TabIndex        =   9
+      Tag             =   "101"
+      Top             =   15
+      Visible         =   0   'False
+      Width           =   3165
+      Begin VB.TextBox txKeyw 
+         Appearance      =   0  'Flat
+         BorderStyle     =   0  'None
+         Height          =   1095
+         Left            =   135
+         MultiLine       =   -1  'True
+         ScrollBars      =   2  'Vertical
+         TabIndex        =   11
+         Top             =   465
+         Width           =   2910
+      End
+      Begin VB.Label Label4 
+         AutoSize        =   -1  'True
+         Caption         =   "Palabras clave:"
+         Height          =   195
+         Left            =   120
+         TabIndex        =   10
+         Tag             =   "105"
+         Top             =   225
+         Width           =   1095
+      End
+   End
+   Begin MSComDlg.CommonDialog CommonDialog1 
+      Left            =   0
+      Top             =   0
+      _ExtentX        =   847
+      _ExtentY        =   847
+      _Version        =   393216
+   End
+End
+Attribute VB_Name = "LexerPrpag"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+
+Option Explicit
+
+Dim fnt As StdFont
+
+Dim xmldoc As DOMDocument
+
+Private Sub cmdChangeFont_Click()
+Dim nd As IXMLDOMNode
+Dim v As Variant, w As Variant
+Dim sql As String
+    v = Split1(tvLexer.SelectedItem.key)
+    w = Split1(v(2), "=")
+    With CommonDialog1
+        .flags = cdlCFBoth Or cdlCFEffects
+        .FontName = fnt.Name
+        .FontBold = fnt.Bold
+        .FontItalic = fnt.Italic
+        .FontUnderline = fnt.Underline
+        .FontSize = fnt.Size
+        .ShowFont
+        lblExample = .FontName
+        lblExample.Font.Name = .FontName
+        lblExample.Font.Bold = .FontBold
+        lblExample.Font.Italic = .FontItalic
+        lblExample.Font.Underline = .FontUnderline
+        lblExample.Font.Size = .FontSize
+        fnt.Name = .FontName
+        fnt.Bold = .FontBold
+        fnt.Italic = .FontItalic
+        fnt.Underline = .FontUnderline
+        fnt.Size = .FontSize
+    End With
+    If v(1) = "style" Then
+        sql = LNGCONST & v(0) & STYLECONST & CStr(w(1))
+    Else
+        sql = DEFCONST & CStr(w(1))
+    End If
+    Set nd = SearchNode(sql & """]/font")
+    ' Cambiamos los atributos de la fuente en el objeto DOMDocument
+    With nd.Attributes
+        .getNamedItem("name").nodeValue = CommonDialog1.FontName
+        .getNamedItem("size").nodeValue = CommonDialog1.FontSize
+        .getNamedItem("bold").nodeValue = IIf(CommonDialog1.FontBold, "true", "false")
+        .getNamedItem("italic").nodeValue = IIf(CommonDialog1.FontItalic, "true", "false")
+        .getNamedItem("underline").nodeValue = IIf(CommonDialog1.FontUnderline, "true", "false")
+    End With
+    Set nd = Nothing
+    Call SamplePosition
+    Changed = True
+End Sub
+
+Private Sub chkEolFil_Click()
+    ChangeValue IIf(chkEolFil, "true", "false"), "eolfilled"
+End Sub
+
+Private Sub chkVisible_Click()
+    ChangeValue IIf(chkVisible, "true", "false"), "visible"
+End Sub
+
+Private Sub optL_Click()
+    ChangeValue "2", "case"
+    Changed = True
+End Sub
+
+Private Sub optU_Click()
+    ChangeValue "1", "case"
+    Changed = True
+End Sub
+
+Private Sub optUL_Click()
+    ChangeValue "0", "case"
+    Changed = True
+End Sub
+
+Private Sub Picture1_Click()
+    With CommonDialog1
+        .flags = cdlCCRGBInit
+        .Color = Picture1.BackColor
+        .ShowColor
+        Picture1.BackColor = .Color
+        lblExample.ForeColor = .Color
+        ' Cambiamos el color de primer plano en el DOMDocument
+        ChangeValue CStr(.Color), "forecolor"
+    End With
+    Call SamplePosition
+    Changed = True
+End Sub
+
+Private Sub Picture2_Click()
+    With CommonDialog1
+        .flags = cdlCCRGBInit
+        .Color = Picture2.BackColor
+        .ShowColor
+        Picture2.BackColor = .Color
+        lblExample.BackColor = .Color
+        ' Cambiamos el color de fondo en el objeto DOMDocument
+        ChangeValue CStr(.Color), "backcolor"
+    End With
+    Call SamplePosition
+    Changed = True
+End Sub
+
+Private Sub PropertyPage_ApplyChanges()
+    ' Guardamos los cambios en el documento XML
+    xmldoc.save (SelectedControls(0).ConfFile)
+    SelectedControls(0).ChangeDefaultStyle
+End Sub
+
+Private Sub PropertyPage_Initialize()
+Dim ct As Control
+    Set fnt = New StdFont
+    For Each ct In PropertyPage.Controls
+        If ct.Tag <> "" Then
+            ct.Caption = LoadResString(CLng(ct.Tag))
+        End If
+    Next ct
+    tvLexer.Nodes.Clear
+End Sub
+
+' Rutina de dibujo del árbol de lenguajes/estilos
+Sub NodePaint(nodelist As IXMLDOMNodeList, Optional nd As Node)
+Dim xmlNode As IXMLDOMNode
+Dim n As Long
+Dim nod As Node
+Dim Name As String, key As String
+Static lng As String
+    For n = 0 To nodelist.length - 1
+        Set xmlNode = nodelist.Item(n)
+        If xmlNode.hasChildNodes Then
+            If xmlNode.Attributes.length > 0 Then
+                If Not xmlNode.Attributes.getNamedItem("vbres") Is Nothing Then
+                    Name = LoadResString(CLng(xmlNode.Attributes.getNamedItem("vbres").nodeValue))
+                Else
+                    Name = xmlNode.Attributes.getNamedItem("name").nodeValue
+                End If
+                If xmlNode.nodeName = "language" Then
+                    Name = Name & ": " & xmlNode.Attributes.getNamedItem("name").nodeValue
+                    lng = xmlNode.Attributes.getNamedItem("name").nodeValue
+                End If
+                If Not xmlNode.Attributes.getNamedItem("description") Is Nothing Then
+                    Name = Name & " (" & xmlNode.Attributes.getNamedItem("description").nodeValue & ")"
+                End If
+            End If
+            key = lng & " " & xmlNode.nodeName
+            If Not xmlNode.Attributes.getNamedItem("code") Is Nothing Then
+                key = key & " code=" & xmlNode.Attributes.getNamedItem("code").nodeValue
+            End If
+            If nd Is Nothing Then
+                Set nod = tvLexer.Nodes.Add(, , key, Name)
+            Else
+                Set nod = tvLexer.Nodes.Add(nd, tvwChild, key, Name)
+            End If
+            NodePaint xmlNode.childNodes, nod
+        End If
+        Set xmlNode = Nothing
+    Next n
+End Sub
+
+Private Sub PropertyPage_SelectionChanged()
+    If SelectedControls.Count > 1 Then
+        Err.Raise 520, "PropetyPage", LoadResString(520)
+    Else
+        Set xmldoc = New DOMDocument
+        If xmldoc.Load(SelectedControls(0).ConfFile) Then
+            xmldoc.validateOnParse = True
+            'xmldoc.setProperty "SelectionLanguage", "XPath"
+            NodePaint xmldoc.documentElement.childNodes
+        Else
+            Dim xmlmsg As String
+            With xmldoc.parseError
+                xmlmsg = .reason & .srcText & "."
+                If .line Then xmlmsg = xmlmsg & vbCrLf & " " & Replace2(LoadResString(515), "%", .line, .linepos)
+            End With
+            Err.Raise 515, "Lexer.xml", xmlmsg
+        End If
+    End If
+End Sub
+
+Private Sub PropertyPage_Terminate()
+    ' Borrar el tree view
+    tvLexer.Nodes.Clear
+    Set xmldoc = Nothing
+    Set fnt = Nothing
+End Sub
+
+'
+Private Sub tvLexer_Click()
+Dim k As Integer
+Dim v As Variant, w As Variant
+Dim n As IXMLDOMNode
+Dim sql As String
+    Debug.Print tvLexer.SelectedItem.key
+    v = Split1(tvLexer.SelectedItem.key)
+    frLanguage.Caption = LoadResString(CLng(frLanguage.Tag)) & ": " & v(0)
+    If InStr(tvLexer.SelectedItem.key, "code") Then w = Split1(CStr(v(2)), "=")
+    If v(1) Like "*style" Then
+        If v(1) = "style" Then
+            sql = LNGCONST & v(0) & STYLECONST & CStr(w(1)) & SQLEND
+        Else
+            sql = DEFCONST & CStr(w(1)) & SQLEND
+        End If
+        Set n = SearchNode(sql)
+        frStyle.Caption = LoadResString(CLng(frStyle.Tag)) & ": " & tvLexer.SelectedItem & IIf(v(0) <> "", " (" & v(0) & ")", "")
+        frLanguage.Visible = False
+        With frStyle
+            .left = 3060
+            .top = 15
+            .Visible = True
+        End With
+        With n.childNodes
+            For k = 0 To n.childNodes.length - 1
+                Select Case .Item(k).nodeName
+                    Case "font"
+                        Set fnt = MakeFont(.Item(k))
+                        lblExample = fnt.Name
+                        With lblExample.Font
+                            .Name = fnt.Name
+                            .Size = fnt.Size
+                            .Bold = fnt.Bold
+                            .Italic = fnt.Italic
+                            .Underline = fnt.Underline
+                        End With
+                    Case "forecolor"
+                        Picture1.BackColor = .Item(k).Attributes.getNamedItem("value").nodeValue     ' Color de primer plano del estilo
+                        lblExample.ForeColor = Picture1.BackColor
+                    Case "backcolor"
+                        Picture2.BackColor = .Item(k).Attributes.getNamedItem("value").nodeValue     ' Color de fondo del estilo
+                        lblExample.BackColor = Picture2.BackColor
+                    Case "eolfilled"
+                        If .Item(k).Attributes.getNamedItem("value").nodeValue = "true" Then         ' Si se colorea hasta el final de línea
+                            chkEolFil.Value = 1
+                        Else
+                            chkEolFil.Value = 0
+                        End If
+                        'Call SamplePosition
+                    Case "visible"
+                        If .Item(k).Attributes.getNamedItem("value").nodeValue = "true" Then         ' Si el estilo es visible
+                            chkVisible.Value = 1
+                        Else
+                            chkVisible.Value = 0
+                        End If
+                        lblExample.Visible = chkVisible
+                    Case "case"
+                        Select Case .Item(k).Attributes.getNamedItem("value").nodeValue
+                            Case SC_CASE_MIXED
+                                optUL.Value = 1
+                            Case SC_CASE_UPPER
+                                optU.Value = 1
+                            Case SC_CASE_LOWER
+                                optL.Value = 1
+                        End Select
+                    Case "charset"
+                End Select
+            Next k
+        End With
+        Call SamplePosition
+        Set n = Nothing
+    ElseIf v(1) = "keywords" Then
+        Dim str As String
+        frLanguage.Visible = True
+        frStyle.Visible = False
+        Set n = SearchNode(LNGCONST & v(0) & KEYWCONST & CStr(w(1)) & SQLEND)
+        str = Replace1(n.Text, vbTab, "")     ' Quitamos tabuladores
+        str = Replace1(str, vbLf, " ")        ' Quitamos retornos
+        txKeyw = Replace1(str, "  ", " ")     ' Quitamos espacios dobles
+    Else
+        frStyle.Visible = False
+        frLanguage.Visible = False
+    End If
+End Sub
+
+' Crear una fuente con los valores del nodo
+Function MakeFont(nd As IXMLDOMNode) As StdFont
+    Set MakeFont = New StdFont
+    MakeFont.Name = nd.Attributes.getNamedItem("name").nodeValue
+    MakeFont.Size = val(nd.Attributes.getNamedItem("size").nodeValue)
+    MakeFont.Bold = nd.Attributes.getNamedItem("bold").nodeValue
+    MakeFont.Italic = nd.Attributes.getNamedItem("italic").nodeValue
+    MakeFont.Underline = nd.Attributes.getNamedItem("underline").nodeValue
+End Function
+
+Private Sub txKeyw_Change()
+Dim nd As IXMLDOMNode
+Dim v As Variant, w As Variant
+    v = Split1(tvLexer.SelectedItem.key)
+    w = Split1(CStr(v(2)), "=")
+    ' Cambiamos la palabras reconocidas en el objeto DOMDocument
+    Set nd = SearchNode(LNGCONST & v(0) & KEYWCONST & CStr(w(1)) & SQLEND)
+    nd.Text = txKeyw
+    Set nd = Nothing
+    Call SamplePosition
+    Changed = True
+End Sub
+
+Private Sub SamplePosition()
+With lblExample
+    .AutoSize = True
+    .AutoSize = False
+    .width = Picture3.width - 8
+    .left = 4
+    .top = ((Picture3.height / 2) - (.height / 2)) - 10
+End With
+End Sub
+
+' Buscar un nodo según una cadena "XPath"
+Function SearchNode(ByVal sql As String) As IXMLDOMNode
+Dim lst As IXMLDOMNodeList
+    Set lst = xmldoc.documentElement.selectNodes(sql)
+    If lst.length = 1 Then
+        Set SearchNode = lst.Item(0)
+    ElseIf lst.length = 0 Then
+        Err.Raise 514, "SearchNode", LoadResString(514)
+    Else
+        Err.Raise 513, "SearchNode", LoadResString(513)
+    End If
+    Set lst = Nothing
+End Function
+
+' Cambiar el valor de un nodo
+Private Sub ChangeValue(val As String, search As String)
+Dim nd As IXMLDOMNode
+Dim v As Variant, w As Variant
+Dim sql As String
+    v = Split1(tvLexer.SelectedItem.key)
+    w = Split1(CStr(v(2)), "=")
+    If v(1) = "style" Then
+        sql = LNGCONST & v(0) & STYLECONST & CStr(w(1))
+    Else
+        sql = DEFCONST & CStr(w(1))
+    End If
+    Set nd = SearchNode(sql & """]/" & search)
+    nd.Attributes.getNamedItem("value").nodeValue = val
+    Set nd = Nothing
+End Sub
+
